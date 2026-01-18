@@ -87,23 +87,23 @@ export function Contact() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{
                     duration: 0.6,
-                    delay: index * 0.15,
+                    delay: index * 0.1, // Reduced delay for faster appearance
                     ease: [0.6, 0.05, 0.01, 0.9],
                   }}
-                  viewport={{ once: true }}
-                  className="group flex items-center gap-4 p-6 bg-[#fbfbfd] border border-[#d2d2d7] rounded-2xl relative overflow-hidden"
-                  whileHover={{ x: 10, transition: { duration: 0.3 } }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  className="group flex items-center gap-4 p-6 bg-[#fbfbfd] border border-[#d2d2d7] rounded-2xl relative overflow-hidden will-change-transform"
+                  whileHover={{ x: 10, transition: { duration: 0.2 } }}
                 >
                   {/* Hover effect */}
                   <motion.div
                     className="absolute inset-0 bg-[#0071e3] opacity-0 group-hover:opacity-5"
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.2 }}
                   />
 
                   <motion.div
-                    className="w-12 h-12 bg-[#0071e3] rounded-xl flex items-center justify-center relative z-10"
+                    className="w-12 h-12 bg-[#0071e3] rounded-xl flex items-center justify-center relative z-10 will-change-transform"
                     whileHover={{ scale: 1.1, rotate: 360 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.4 }}
                   >
                     <Icon className="w-5 h-5 text-white" />
                   </motion.div>
@@ -120,7 +120,7 @@ export function Contact() {
                     className="ml-auto opacity-0 group-hover:opacity-100"
                     initial={{ x: -10 }}
                     whileHover={{ x: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.2 }}
                   >
                     <svg className="w-5 h-5 text-[#0071e3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

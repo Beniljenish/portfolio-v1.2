@@ -43,10 +43,10 @@ export function Hero() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
       id="home"
     >
-      {/* Floating orbs */}
+      {/* Floating orbs - optimized with will-change and reduced complexity */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-72 h-72 md:w-96 md:h-96 rounded-full"
+          className="absolute top-1/4 left-1/4 w-72 h-72 md:w-96 md:h-96 rounded-full will-change-transform"
           style={{
             background: "radial-gradient(circle, rgba(0, 113, 227, 0.1) 0%, transparent 70%)",
           }}
@@ -58,11 +58,11 @@ export function Hero() {
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "linear", // Changed to linear for better performance
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-80 md:h-80 rounded-full"
+          className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-80 md:h-80 rounded-full will-change-transform"
           style={{
             background: "radial-gradient(circle, rgba(0, 113, 227, 0.08) 0%, transparent 70%)",
           }}
@@ -74,7 +74,7 @@ export function Hero() {
           transition={{
             duration: 15,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "linear", // Changed to linear for better performance
           }}
         />
       </div>

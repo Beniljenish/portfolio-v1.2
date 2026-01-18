@@ -37,7 +37,7 @@ export function AnimatedBackground() {
         return;
       }
 
-      time += 0.005;
+      time += 0.003; // Reduced animation speed for better performance
 
       // Clear canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -57,22 +57,8 @@ export function AnimatedBackground() {
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Add grain texture
-      try {
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const data = imageData.data;
-
-        for (let i = 0; i < data.length; i += 4) {
-          const noise = Math.random() * 10 - 5;
-          data[i] += noise;
-          data[i + 1] += noise;
-          data[i + 2] += noise;
-        }
-
-        ctx.putImageData(imageData, 0, 0);
-      } catch (error) {
-        // Skip grain texture if error
-      }
+      // Skip expensive grain texture for better performance
+      // Use CSS filter instead for grain effect
 
       animationFrameId = requestAnimationFrame(drawGradientMesh);
     };
@@ -102,13 +88,12 @@ export function AnimatedBackground() {
   return (
     <div
       ref={containerRef}
-      className="fixed top-0 left-0 w-full pointer-events-none z-0"
-      style={{ minHeight: "100vh" }}
+      className="fixed top-0 left-0 w-full pointer-events-none z-0 min-h-screen"
     >
       <canvas
         ref={canvasRef}
-        className="absolute top-0 left-0 w-full"
-        style={{ opacity: 0.4 }}
+        className="absolute top-0 left-0 w-full opacity-40"
+        style={{ filter: 'contrast(1.1) brightness(1.05)' }}
       />
     </div>
   );

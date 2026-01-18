@@ -34,17 +34,17 @@ export function Skills() {
 
   return (
     <section className="py-32 px-6 bg-[#fbfbfd] relative overflow-hidden" id="skills">
-      {/* Animated grid background */}
+      {/* Simplified grid background - reduced from 20 to 10 lines */}
       <div className="absolute inset-0 opacity-20">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-full h-px bg-[#d2d2d7]"
-            style={{ top: `${i * 5}%` }}
+            className="absolute w-full h-px bg-[#d2d2d7] will-change-transform"
+            style={{ top: `${i * 10}%` }}
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: i * 0.02 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: i * 0.03 }}
+            viewport={{ once: true, margin: "-100px" }}
           />
         ))}
       </div>
