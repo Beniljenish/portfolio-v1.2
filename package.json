@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://beniljenish.github.io/Portfolio-V2-/",
   "scripts": {
-    "build": "vite build",
+  "build": "npx vite build",
     "dev": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
