@@ -26,11 +26,20 @@ export function Navbar() {
       <div className="max-w-[980px] mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <motion.div
-            className="text-xl text-[#1d1d1f]"
+            className="flex items-center gap-3 text-xl text-[#1d1d1f]"
             style={{ fontWeight: 600 }}
             whileHover={{ scale: 1.05 }}
           >
-            Benil's Portfolio
+            <img
+              src="https://drive.google.com/file/d/15fG6V__2VSQ6JZBs4fMXsvWq1lAnEtK6/view?usp=sharing"
+              alt="Benil Jenish Logo"
+              className="h-8 w-8 object-contain"
+              onError={(e) => {
+                // Hide image gracefully if logo not added yet
+                (e.currentTarget as HTMLImageElement).style.display = "none";
+              }}
+            />
+            <span>Benil's Portfolio</span>
           </motion.div>
           
           <div className="flex gap-8 items-center">
@@ -38,13 +47,13 @@ export function Navbar() {
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-[#1d1d1f] hover:text-[#0071e3] transition-colors text-sm relative group"
+                className="text-[#1d1d1f] hover:text-[#10b981] transition-colors text-sm relative group"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#0071e3] group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#10b981] group-hover:w-full transition-all duration-300"></span>
               </motion.a>
             ))}
           </div>

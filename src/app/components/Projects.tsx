@@ -103,7 +103,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
 
         <div className="p-6 relative" style={{ transform: "translateZ(20px)" }}>
           <h3
-            className="text-xl mb-2 text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors duration-300"
+            className="text-xl mb-2 text-[#1d1d1f] group-hover:text-[#10b981] transition-colors duration-300"
             style={{ fontWeight: 600 }}
           >
             {project.title}
@@ -120,7 +120,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 + tagIndex * 0.05 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05, backgroundColor: "#0071e3", color: "#ffffff" }}
+                whileHover={{ scale: 1.05, backgroundColor: "#10b981", color: "#ffffff" }}
               >
                 {tag}
               </motion.span>
@@ -177,7 +177,7 @@ export function Projects() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="text-[#0071e3] text-sm tracking-wider uppercase">Portfolio</span>
+            <span className="text-[#10b981] text-sm tracking-wider uppercase">Portfolio</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl tracking-tight mb-4 text-[#1d1d1f]" style={{ fontWeight: 600 }}>

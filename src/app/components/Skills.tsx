@@ -64,7 +64,7 @@ export function Skills() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="text-[#0071e3] text-sm tracking-wider uppercase">Expertise</span>
+            <span className="text-[#10b981] text-sm tracking-wider uppercase">Expertise</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl tracking-tight mb-4 text-[#1d1d1f]" style={{ fontWeight: 600 }}>
@@ -110,7 +110,7 @@ function SkillCard({ category, index }: { category: any; index: number }) {
         <motion.div
           className="absolute inset-0 opacity-0"
           style={{
-            background: "linear-gradient(135deg, rgba(0, 113, 227, 0.03) 0%, rgba(0, 113, 227, 0.08) 100%)",
+            background: "linear-gradient(135deg, rgba(16, 185, 129, 0.03) 0%, rgba(16, 185, 129, 0.08) 100%)",
           }}
           variants={{
             hover: { opacity: 1 },
@@ -125,7 +125,7 @@ function SkillCard({ category, index }: { category: any; index: number }) {
         >
           {category.category}
           <motion.span
-            className="absolute -bottom-2 left-0 h-0.5 bg-[#0071e3]"
+            className="absolute -bottom-2 left-0 h-0.5 bg-[#10b981]"
             initial={{ width: 0 }}
             whileInView={{ width: "40px" }}
             transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
@@ -159,7 +159,7 @@ function SkillCard({ category, index }: { category: any; index: number }) {
                 <motion.div
                   className="h-full rounded-full relative overflow-hidden"
                   style={{
-                    background: "linear-gradient(90deg, #0071e3 0%, #0077ed 100%)",
+                    background: "linear-gradient(90deg, #10b981 0%, #059669 100%)",
                   }}
                   initial={{ width: 0 }}
                   animate={isInView ? { width: `${skill.level}%` } : {}}

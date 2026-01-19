@@ -48,7 +48,7 @@ export function Hero() {
         <motion.div
           className="absolute top-1/4 left-1/4 w-72 h-72 md:w-96 md:h-96 rounded-full will-change-transform"
           style={{
-            background: "radial-gradient(circle, rgba(0, 113, 227, 0.1) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%)",
           }}
           animate={{
             scale: [1, 1.2, 1],
@@ -64,7 +64,7 @@ export function Hero() {
         <motion.div
           className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-80 md:h-80 rounded-full will-change-transform"
           style={{
-            background: "radial-gradient(circle, rgba(0, 113, 227, 0.08) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%)",
           }}
           animate={{
             scale: [1.2, 1, 1.2],
@@ -93,8 +93,8 @@ export function Hero() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md border border-[#d2d2d7]/50 rounded-full text-sm text-[#1d1d1f]">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0071e3] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0071e3]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10b981] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10b981]"></span>
               </span>
               Available for work
             </span>
@@ -140,7 +140,11 @@ export function Hero() {
             className="flex gap-4 justify-center items-center flex-wrap mb-12"
           >
             <motion.button
-              className="group relative px-6 py-3 bg-[#0071e3] text-white rounded-full overflow-hidden text-[17px]"
+              onClick={() => {
+                const workSection = document.getElementById('work');
+                workSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className="group relative px-6 py-3 bg-[#10b981] text-white rounded-full overflow-hidden text-[17px] cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -149,7 +153,7 @@ export function Hero() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
               <motion.div
-                className="absolute inset-0 bg-[#0077ed]"
+                className="absolute inset-0 bg-[#059669]"
                 initial={{ x: "-100%" }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
@@ -157,13 +161,17 @@ export function Hero() {
             </motion.button>
 
             <motion.button
-              className="group relative px-6 py-3 border-2 border-[#0071e3] text-[#0071e3] rounded-full overflow-hidden text-[17px]"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                contactSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className="group relative px-6 py-3 border-2 border-[#10b981] text-[#10b981] rounded-full overflow-hidden text-[17px] cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <span className="relative z-10">Contact me</span>
               <motion.div
-                className="absolute inset-0 bg-[#0071e3]"
+                className="absolute inset-0 bg-[#10b981]"
                 initial={{ y: "100%" }}
                 whileHover={{ y: 0 }}
                 transition={{ duration: 0.3 }}
@@ -197,12 +205,12 @@ export function Hero() {
                   key={index}
                   href={social.href}
                   className="relative w-11 h-11 flex items-center justify-center border border-[#d2d2d7] rounded-full group overflow-hidden"
-                  whileHover={{ scale: 1.1, borderColor: "#0071e3" }}
+                  whileHover={{ scale: 1.1, borderColor: "#10b981" }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <Icon className="w-5 h-5 text-[#1d1d1f] relative z-10 group-hover:text-white transition-colors" />
                   <motion.div
-                    className="absolute inset-0 bg-[#0071e3]"
+                    className="absolute inset-0 bg-[#10b981]"
                     initial={{ scale: 0 }}
                     whileHover={{ scale: 1 }}
                     transition={{ duration: 0.3 }}

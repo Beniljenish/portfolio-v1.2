@@ -35,7 +35,7 @@ export function About() {
       <motion.div
         className="absolute top-20 right-10 w-64 h-64 rounded-full opacity-30"
         style={{
-          background: "radial-gradient(circle, rgba(0, 113, 227, 0.1) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%)",
           y,
         }}
       />
@@ -55,7 +55,7 @@ export function About() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="text-[#0071e3] text-sm tracking-wider uppercase">About Me</span>
+            <span className="text-[#10b981] text-sm tracking-wider uppercase">About Me</span>
           </motion.div>
           
           <h2 className="text-4xl md:text-5xl tracking-tight mb-4 text-[#1d1d1f]" style={{ fontWeight: 600 }}>
@@ -90,12 +90,12 @@ export function About() {
                   <motion.div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     style={{
-                      background: "linear-gradient(135deg, rgba(0, 113, 227, 0.02) 0%, rgba(0, 113, 227, 0.05) 100%)",
+                      background: "linear-gradient(135deg, rgba(16, 185, 129, 0.02) 0%, rgba(16, 185, 129, 0.05) 100%)",
                     }}
                   />
 
                   <motion.div
-                    className="w-12 h-12 bg-[#0071e3] rounded-xl flex items-center justify-center mb-5 relative"
+                    className="w-12 h-12 bg-[#10b981] rounded-xl flex items-center justify-center mb-5 relative"
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   >
@@ -111,7 +111,7 @@ export function About() {
 
                   {/* Bottom line animation */}
                   <motion.div
-                    className="absolute bottom-0 left-0 h-1 bg-[#0071e3]"
+                    className="absolute bottom-0 left-0 h-1 bg-[#10b981]"
                     initial={{ width: 0 }}
                     whileHover={{ width: "100%" }}
                     transition={{ duration: 0.4 }}

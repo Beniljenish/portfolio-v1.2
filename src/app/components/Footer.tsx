@@ -28,7 +28,7 @@ export function Footer() {
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity, repeatDelay: 1 }}
             >
-              <Heart className="w-4 h-4 text-[#0071e3] fill-[#0071e3]" />
+              <Heart className="w-4 h-4 text-[#10b981] fill-[#10b981]" />
             </motion.span>{" "}
             by Benil Jenish
           </motion.p>

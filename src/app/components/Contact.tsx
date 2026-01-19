@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 export function Contact() {
@@ -57,7 +57,7 @@ export function Contact() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="text-[#0071e3] text-sm tracking-wider uppercase">Get In Touch</span>
+            <span className="text-[#10b981] text-sm tracking-wider uppercase">Get In Touch</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl tracking-tight mb-4 text-[#1d1d1f]" style={{ fontWeight: 600 }}>
@@ -96,12 +96,12 @@ export function Contact() {
                 >
                   {/* Hover effect */}
                   <motion.div
-                    className="absolute inset-0 bg-[#0071e3] opacity-0 group-hover:opacity-5"
+                    className="absolute inset-0 bg-[#10b981] opacity-0 group-hover:opacity-5"
                     transition={{ duration: 0.2 }}
                   />
 
                   <motion.div
-                    className="w-12 h-12 bg-[#0071e3] rounded-xl flex items-center justify-center relative z-10 will-change-transform"
+                    className="w-12 h-12 bg-[#10b981] rounded-xl flex items-center justify-center relative z-10 will-change-transform"
                     whileHover={{ scale: 1.1, rotate: 360 }}
                     transition={{ duration: 0.4 }}
                   >
@@ -110,7 +110,7 @@ export function Contact() {
                   
                   <div className="relative z-10">
                     <p className="text-sm text-[#6e6e73] mb-1">{info.label}</p>
-                    <p className="text-[17px] text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors" style={{ fontWeight: 500 }}>
+                    <p className="text-[17px] text-[#1d1d1f] group-hover:text-[#10b981] transition-colors" style={{ fontWeight: 500 }}>
                       {info.value}
                     </p>
                   </div>
@@ -122,7 +122,7 @@ export function Contact() {
                     whileHover={{ x: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <svg className="w-5 h-5 text-[#0071e3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[#10b981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </motion.div>
@@ -149,7 +149,7 @@ export function Contact() {
                     id="name"
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0071e3] focus:border-transparent transition-all text-[17px]"
+                    className="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#10b981] focus:border-transparent transition-all text-[17px]"
                     placeholder="Your name"
                     whileFocus={{ scale: 1.01 }}
                     transition={{ duration: 0.2 }}
@@ -165,7 +165,7 @@ export function Contact() {
                     id="email"
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0071e3] focus:border-transparent transition-all text-[17px]"
+                    className="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#10b981] focus:border-transparent transition-all text-[17px]"
                     placeholder="your.email@example.com"
                     whileFocus={{ scale: 1.01 }}
                     transition={{ duration: 0.2 }}
@@ -181,7 +181,7 @@ export function Contact() {
                     rows={5}
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0071e3] focus:border-transparent transition-all resize-none text-[17px]"
+                    className="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#10b981] focus:border-transparent transition-all resize-none text-[17px]"
                     placeholder="Your idea starts here..."
                     whileFocus={{ scale: 1.01 }}
                     transition={{ duration: 0.2 }}
@@ -189,17 +189,16 @@ export function Contact() {
                 </div>
 
                 <motion.button
-                  type="submit"
-                  className="group relative w-full px-6 py-3 bg-[#0071e3] text-white rounded-full overflow-hidden text-[17px]"
+                  className="group relative w-full px-6 py-3 bg-[#10b981] text-white rounded-full overflow-hidden text-[17px]"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
-                    Send Message
-                    <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    Send message
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <motion.div
-                    className="absolute inset-0 bg-[#0077ed]"
+                    className="absolute inset-0 bg-[#059669]"
                     initial={{ x: "-100%" }}
                     whileHover={{ x: 0 }}
                     transition={{ duration: 0.3 }}
