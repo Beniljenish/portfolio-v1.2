@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Mail, MapPin, Phone, Send, ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "emailjs-com";
 
 export function Contact() {
   const [formState, setFormState] = useState({
@@ -25,10 +26,40 @@ export function Contact() {
     {
       icon: MapPin,
       label: "Location",
-      value: "Chennai,India",
-      href: "#",
+      value: "Chennai, Tamil Nadu, India",
+      href: "https://www.google.com/maps/place/Chennai,+Tamil+Nadu,+India",
     },
   ];
+
+  const formRef = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm(
+      "service_1yyaapl",
+      "template_bthmz66",
+      formRef.current,
+      "nFrhwiMBjCGlXGdgf"
+    ).then(
+      (result) => {
+        // Send auto-reply to user
+        emailjs.send(
+          "service_1yyaapl",
+          "template_pl34g7q",
+          {
+            user_email: formState.email,
+            user_name: formState.name
+          },
+          "nFrhwiMBjCGlXGdgf"
+        );
+        alert("Message sent!");
+        setFormState({ name: "", email: "", message: "" });
+      },
+      (error) => {
+        alert("Failed to send message.");
+      }
+    );
+  };
 
   return (
     <section className="py-32 px-6 bg-white relative overflow-hidden" id="contact">
@@ -139,7 +170,7 @@ export function Contact() {
             viewport={{ once: true }}
           >
             <div className="bg-[#fbfbfd] rounded-2xl p-8 border border-[#d2d2d7]">
-              <form className="space-y-6">
+              <form className="space-y-6" ref={formRef} onSubmit={sendEmail}>
                 <div>
                   <label htmlFor="name" className="block mb-2 text-[17px] text-[#1d1d1f]" style={{ fontWeight: 500 }}>
                     Name
@@ -147,6 +178,7 @@ export function Contact() {
                   <motion.input
                     type="text"
                     id="name"
+                    name="name"
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     className="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#10b981] focus:border-transparent transition-all text-[17px]"
@@ -163,6 +195,7 @@ export function Contact() {
                   <motion.input
                     type="email"
                     id="email"
+                    name="email"
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     className="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#10b981] focus:border-transparent transition-all text-[17px]"
@@ -178,6 +211,7 @@ export function Contact() {
                   </label>
                   <motion.textarea
                     id="message"
+                    name="message"
                     rows={5}
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
